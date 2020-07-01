@@ -1,32 +1,32 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <my-form :model="model">
+        <my-form-item label="用户名">
+            <my-input placeholder="请输入" v-model="model.username" width="200px"></my-input>
+        </my-form-item>
+    <my-form-item label="单选框">
+            <my-switch v-model="model.active"></my-switch>
+        </my-form-item>
+
+
+        <my-form-item label="单选框">
+            <my-button >1111111</my-button>
+        </my-form-item>
+    </my-form>
+    
   </div>
 </template>
-
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+<script>
+export default {
+  data() {
+    return {
+     model:{
+         active:true,
+         username:''
+     }
+    };
+  },
+  
+};
+</script>
+<style lang="less"></style>
